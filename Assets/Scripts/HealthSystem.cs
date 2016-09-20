@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HealthSystem : MonoBehaviour {
 
-    private float lifes = 3;
+    private float _lifes = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +12,7 @@ public class HealthSystem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (lifes <= 0)
+	    if (_lifes <= 0)
         {
             Destroy(gameObject);
         }
@@ -22,7 +22,7 @@ public class HealthSystem : MonoBehaviour {
     {
         if (CompareTag("Obstacle"))
         {
-            lifes = lifes - 1;
+            _lifes = _lifes - 1;
             Destroy(other.gameObject);
         }
     }

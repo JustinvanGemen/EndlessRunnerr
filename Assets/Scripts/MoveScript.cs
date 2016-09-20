@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveScript : MonoBehaviour {
 
-    private float timeToMove = 0.1F;
+    private float _timeToMove = 0.1F;
 	// Use this for initialization
 	void Start () {
         
@@ -15,12 +15,12 @@ public class MoveScript : MonoBehaviour {
     }
     private void MoveRight()
     {
-        if (Time.time > timeToMove)
+        if (Time.time > _timeToMove)
         {
             Vector3 position = this.transform.position;
-            position.x +2;
+            position.x +=2;
             this.transform.position = position;
-            timeToMove = 0.2f + Time.time;
+            _timeToMove = 0.2f + Time.time;
         }
     }
 }
