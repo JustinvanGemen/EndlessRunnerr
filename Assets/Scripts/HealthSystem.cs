@@ -21,5 +21,9 @@ public class HealthSystem : MonoBehaviour {
             _lifes -= 1;
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("Water"))
+        {
+            _lifes -= 1;
+        }
     }
 }
