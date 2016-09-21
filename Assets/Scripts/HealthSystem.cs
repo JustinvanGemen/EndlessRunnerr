@@ -2,13 +2,8 @@
 using System.Collections;
 
 public class HealthSystem : MonoBehaviour {
-
+    [SerializeField]
     private float _lifes = 3;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -18,11 +13,12 @@ public class HealthSystem : MonoBehaviour {
         }
 	}
 
-    void OnTriggerHit(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        if (CompareTag("Obstacle"))
+        Debug.Log("hi");    
+        if (other.CompareTag("Obstacle"))
         {
-            _lifes = _lifes - 1;
+            _lifes -= 1;
             Destroy(other.gameObject);
         }
     }
