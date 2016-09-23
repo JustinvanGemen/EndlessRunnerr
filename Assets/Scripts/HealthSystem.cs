@@ -8,10 +8,10 @@ public class HealthSystem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (_waterTimer > 0)
+        /*if (_waterTimer > 0)
         {
             _waterTimer--;
-        }
+        }*/
 
         if (_lifes <= 0)
         {
@@ -19,7 +19,7 @@ public class HealthSystem : MonoBehaviour {
         }
 	}
 
-    void OnTriggerEnter2D   (Collider2D other)
+    void OnTriggerEnter2D (Collider2D other)
     {
         
    
