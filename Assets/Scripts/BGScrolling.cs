@@ -20,7 +20,6 @@ public class BGScrolling : MonoBehaviour {
     void OnBecameInvisible()
     {
         int randomBackground = Random.Range(0, 4);
-        Debug.Log(randomBackground);
         transform.position += BGSize;
         backgrounds[randomBackground].transform.position = transform.position;
     }

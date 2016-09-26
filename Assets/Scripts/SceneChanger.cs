@@ -1,20 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-    [SerializeField]
-    private void ChangeScene()
+    public void ChangeScene(int scene)
     {
-
+        SceneManager.LoadScene(scene);
     }
 }
