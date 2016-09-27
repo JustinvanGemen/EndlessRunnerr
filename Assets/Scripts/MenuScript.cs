@@ -27,10 +27,8 @@ public class MenuScript : MonoBehaviour
 
     public void ScreenUpdate(Canvas menu)
     {
-        Debug.Log(menu.name);
         for (int i = 0; i < menus.Length; i++)
         {
-            Debug.Log(menus[i].name);
             if (menus[i].name == menu.name)
             {
                 menus[i].enabled = true;
