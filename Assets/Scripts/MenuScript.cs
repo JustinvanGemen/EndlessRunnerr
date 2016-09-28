@@ -8,6 +8,11 @@ public class MenuScript : MonoBehaviour
 
     [SerializeField]
     private Canvas[] menus; //always put in the main menu first!
+    public Canvas getCanvas(int i)
+    {
+        return menus[i];
+    }
+
 
     void Awake()
     {
