@@ -16,7 +16,7 @@ public class HealthSystem : MonoBehaviour {
         if (other.CompareTag("Obstacle")) //if player hits an obstacle destroy the obstacle and remove a life from the player.
         {
             _lifes -= 1;
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
         else if (other.CompareTag("Water"))
         {
