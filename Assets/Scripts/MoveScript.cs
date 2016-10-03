@@ -13,7 +13,7 @@ public class MoveScript : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1, 1 << LayerMask.NameToLayer("Platform"));
 
