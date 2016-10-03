@@ -20,6 +20,6 @@ public class UIHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         LifeScore.text = "Lifes: " + healthSystem.lifes;
-        score.text = "Score: " + (transform.position.x - startPos);
+        score.text = "Score: " + Mathf.Round( (transform.position.x - startPos));
 	}
 }
