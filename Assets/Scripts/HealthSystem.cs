@@ -3,8 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 //Joey vd Wijk
 public class HealthSystem : MonoBehaviour {
-    [SerializeField] 
-    private float _lifes = 3; //make a float for the players life, give him 3. (if you want you can change it in the editor)
+    public float lifes = 3; //make a float for the players life, give him 3. (if you want you can change it in the editor)
     [SerializeField]
     private Text text;
     private MenuScript menuScript;  //import menuscript as var.
@@ -18,9 +17,9 @@ public class HealthSystem : MonoBehaviour {
     {
         if (other.CompareTag("Obstacle")) //if player hits an obstacle remove a life from the player.
         {
-            _lifes -= 1;
+            lifes -= 1;
         }
-        if (_lifes <= 0) //if player runs out of lifes continue.
+        if (lifes <= 0) //if player runs out of lifes continue.
         {
             if (gameObject.CompareTag("Player")) //if Player 1 died change text.
             {
