@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//Joey vd Wijk
 public class SpikesHandler : MonoBehaviour {
     [SerializeField]
     private GameObject[] spikes;

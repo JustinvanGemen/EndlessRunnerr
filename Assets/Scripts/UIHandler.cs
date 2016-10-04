@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+//Joey vd Wijk
 public class UIHandler : MonoBehaviour {
     [SerializeField]
     private Text score;

@@ -5,11 +5,14 @@ using UnityEngine.UI;
 public class HealthSystem : MonoBehaviour {
     public float lifes = 3; //make a float for the players life, give him 3. (if you want you can change it in the editor)
     [SerializeField]
+    private Canvas gameOverCanvas;
+    [SerializeField]
     private Text text;
     private MenuScript menuScript;  //import menuscript as var.
 
     void Start()
     {
+        gameOverCanvas.enabled = false;
         menuScript = GetComponent<MenuScript>();  //instantiate menuscript.
     }
 	
@@ -21,6 +24,7 @@ public class HealthSystem : MonoBehaviour {
         }
         if (lifes <= 0) //if player runs out of lifes continue.
         {
+            gameOverCanvas.enabled = true;
             if (gameObject.CompareTag("Player")) //if Player 1 died change text.
             {
                 text.text = "Player 2 Won!";
