@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BladeObstacle : MonoBehaviour {
+public class UpAndDown : MonoBehaviour {
 
     [SerializeField]
     private float speed;
