@@ -36,5 +36,10 @@ public class HealthSystem : MonoBehaviour {
             Destroy(gameObject); //Destroy the player with no lifes.
             Time.timeScale = 0; //pause the game.
         }
+        if(other.name == "ExtraLife")
+        {
+            lifes += 1;
+            Destroy(other.gameObject);
+        }
     }
 }
