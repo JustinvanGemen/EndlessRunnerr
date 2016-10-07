@@ -12,9 +12,9 @@ public class CameraMovement : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        //if (Input.GetKey(KeyCode.RightArrow))
-        //{
+        if (Time.time > 2)
+        {
             transform.Translate(speed * Time.deltaTime, 0f, 0f);
-        //}
+        }
     }
     }
