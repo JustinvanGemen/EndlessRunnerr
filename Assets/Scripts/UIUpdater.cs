@@ -51,5 +51,16 @@ public class UIUpdater : MonoBehaviour {
             Invoke("ReturnMultiplier", 3);
             Destroy(other.gameObject);
         }
+        else if(other.name == "PointsDebuff")
+        {
+            scorePoints = scorePoints - 10;
+            Destroy(other.gameObject);
+        }
+        else if(other.name == "ScorePause")
+        {
+            multiplier = 0;
+            Invoke("ReturnMultiplier", 2);
+            Destroy(other.gameObject);
+        }
     }
 }
