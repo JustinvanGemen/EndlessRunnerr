@@ -9,6 +9,7 @@ public class HealthSystem : MonoBehaviour {
     [SerializeField]
     private Text text;
     private MenuScript menuScript;  //import menuscript as var.
+    private bool godMode = false;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class HealthSystem : MonoBehaviour {
 	
     void OnTriggerEnter2D (Collider2D other) //if something that has trigger enabled, hits the player
     {
-        if (other.CompareTag("Obstacle")) //if player hits an obstacle remove a life from the player.
+        if (other.CompareTag("Obstacle") && godMode == false) //if player hits an obstacle remove a life from the player.
         {
             lifes -= 1;
         }
@@ -41,5 +42,14 @@ public class HealthSystem : MonoBehaviour {
             lifes += 1;
             Destroy(other.gameObject);
         }
+        if(other.name == "GodMode")
+        {
+            godMode = true;
+            Invoke("GodModeOff", 3);
+        }
+    }
+    private void GodModeOff()
+    {
+        godMode = false;
     }
 }

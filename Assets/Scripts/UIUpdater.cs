@@ -9,17 +9,47 @@ public class UIUpdater : MonoBehaviour {
     private Text LifeScore;
     private float lifes;
     private HealthSystem healthSystem;
-    private float startPos;
+    private float lastPos;
+    private float scorePoints;
+    private int multiplier = 1;
 
     void Start()
     {
-        startPos = transform.position.x;
+        //lastPos = transform.position.x;
         healthSystem = GetComponent<HealthSystem>();
+        InvokeRepeating("ScoreUpdate", 0.1f , 0.1f);
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () {        
         LifeScore.text = "Lifes: " + healthSystem.lifes;
-        score.text = "Score: " + Mathf.Round( (transform.position.x - startPos));
+        score.text = "Score: " + Mathf.Round(scorePoints);
 	}
+
+    private void ScoreUpdate()
+    {
+        Debug.Log(multiplier);
+        scorePoints = scorePoints + ((transform.position.x - lastPos) * multiplier);
+        lastPos = transform.position.x;
+    }
+    private void ReturnMultiplier()
+    {
+
+        multiplier = 1;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.name == "ScoreBoost")
+        {
+            scorePoints = scorePoints + 20;
+            Destroy(other.gameObject);
+        }
+        else if(other.name == "ScoreMultiplier")
+        {
+            multiplier = 2;
+            Invoke("ReturnMultiplier", 3);
+            Destroy(other.gameObject);
+        }
+    }
 }
