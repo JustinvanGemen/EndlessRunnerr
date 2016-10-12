@@ -10,7 +10,7 @@ public class MenuScript : MonoBehaviour
     private Canvas[] menus; //always put in the main menu first!
     public Canvas getCanvas(int i) //getter for a pause menu.
     {
-        return menus[i];
+            return menus[i];
     }
 
 

@@ -7,6 +7,7 @@ public class MoveScript : MonoBehaviour
     [SerializeField]
     private float jump = 400;
     private bool isGrounded = true;
+    private bool waitOnJump = true;
 
     void Start()
     {
@@ -22,10 +23,13 @@ public class MoveScript : MonoBehaviour
             {
                 transform.Translate(5f * Time.deltaTime, 0f, 0f);
             }
-            if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded && waitOnJump)
             {
                 rigidBody.AddForce(Vector2.up * jump);
                 isGrounded = false;
+                Debug.Log("afs");
+                waitOnJump = false;
+                Invoke("WaitOnJump", 0.1f);
             }
         }
         else if (gameObject.CompareTag("Player2"))
@@ -34,12 +38,18 @@ public class MoveScript : MonoBehaviour
             {
                 transform.Translate(5f * Time.deltaTime, 0f, 0f);
             }
-            if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.W) && isGrounded && waitOnJump)
             {
                 rigidBody.AddForce(Vector2.up * jump);
                 isGrounded = false;
+                waitOnJump = false;
+                Invoke("WaitOnJump", 0.1f);
             }
         }
         
+    }
+    private void WaitOnJump()
+    {
+        waitOnJump = true;
     }
 }
