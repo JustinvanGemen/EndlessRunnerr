@@ -3,15 +3,19 @@ using System.Collections;
 
 public class DataBase : MonoBehaviour
 {
-
+    private UIUpdater uiUpdater;
+    private float score;
     // Use this for initialization
-    void Start()
+    public void SendScore()
     {
+        uiUpdater = GetComponent<UIUpdater>();
+        score = uiUpdater.ScorePoints;
+        score = Mathf.Round(score);
         //ERG BELANGRIJK
-        StartCoroutine(HandleEnterScore(123331, 12));
+        StartCoroutine(HandleEnterScore(score, 1));
     }
 
-    IEnumerator HandleEnterScore(int score, int playerID)
+    public IEnumerator HandleEnterScore(float score, int playerID)
     {
         Debug.Log("Start Couroutine");
 

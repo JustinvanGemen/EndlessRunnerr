@@ -13,6 +13,14 @@ public class UIUpdater : MonoBehaviour {
     private float scorePoints;
     private int multiplier = 1;
 
+    public float ScorePoints
+    {
+        get
+        {
+            return scorePoints;
+        }
+    }
+
     void Start()
     {
         //lastPos = transform.position.x;

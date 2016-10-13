@@ -10,7 +10,6 @@ public class BGScrolling : MonoBehaviour {
     //10
     void OnBecameInvisible() //when a gameobject with this script gets out of sight start this function.
     {
-        Debug.Log("ag");
         int randomBackground = Random.Range(0, 4); //make a new int that has a random number from 0 to 3 (4 never gets chosen).
         transform.position += BGSize; //move the gameObject to the end of the screen.
         backgrounds[randomBackground].transform.position = transform.position; //move the backgrounds to the game object.

@@ -4,7 +4,7 @@ using System.Collections;
 public class ObstacleSpawning : MonoBehaviour {
     [SerializeField] //lets the var be able to get changed in the editor while private.
     private GameObject[] obstacleField; //make an array of gameObjects for the Obstacle fields avaidable.
-    private Vector3 OFSize = new Vector3(35.4f, 0, 0); //make a new vector3 in the x size of the object fields.
+    private Vector3 OFSize = new Vector3(50, 0, 0); //make a new vector3 in the x size of the object fields.
 
 
     //10
@@ -16,6 +16,7 @@ public class ObstacleSpawning : MonoBehaviour {
 
     private void SpawnObstacle(int i)
     {
+        transform.position += OFSize;
         obstacleField[i].transform.position = transform.position; //move the backgrounds to the game object.
         GameObject go = Instantiate(obstacleField[i]);
         go.transform.position = new Vector3(this.transform.position.x, 1.2f, 0) ;
