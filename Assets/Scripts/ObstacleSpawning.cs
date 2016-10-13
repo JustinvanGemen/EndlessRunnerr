@@ -18,6 +18,6 @@ public class ObstacleSpawning : MonoBehaviour {
     {
         obstacleField[i].transform.position = transform.position; //move the backgrounds to the game object.
         GameObject go = Instantiate(obstacleField[i]);
-        go.transform.position = this.transform.position;
+        go.transform.position = new Vector2(this.transform.position.x, 1.2f) ;
     }
 }
