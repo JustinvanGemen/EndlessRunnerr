@@ -9,6 +9,8 @@ public class BorderControl : MonoBehaviour {
     private GameObject _camera;
     private CameraMovement _camMove;
     private float _camSpeed;
+    private bool fast;
+    private bool slow;
 
 	void Start () {
         
@@ -21,16 +23,33 @@ public class BorderControl : MonoBehaviour {
             
             if (other.CompareTag("CamFast"))
             {
-                _camMove.speed = _camMove.speed + 0.1f;
-                //Invoke("CamMov", 1);
+                fast = true;
+                _camMove.speed = 3.1f;
+                StartCoroutine(Timer());
+            }
+            if(other.CompareTag("CamSlow"))
+                {
+                slow = true;
+                _camMove.speed = 2.9f;
+                StartCoroutine(Timer());
             }
            
         }
 	}
 
-    void CamMov()
+    IEnumerator Timer()
     {
-        _camMove.speed = _camMove.speed * 1;
+        yield return new WaitForSeconds(2f);
+        if (fast)
+        {
+            _camMove.speed = 3;
+            fast = false;
+        }
+        if (slow)
+        {
+            _camMove.speed = 3;
+            slow = false;
+        }
     }
 
 }

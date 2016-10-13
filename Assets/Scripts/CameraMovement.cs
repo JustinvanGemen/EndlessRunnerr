@@ -17,7 +17,9 @@ public class CameraMovement : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
+        Time.timeScale = 1;
         _speed = 3f;
+        speed = 3f;
 	}
 
     // Update is called once per frame
@@ -26,6 +28,9 @@ public class CameraMovement : MonoBehaviour {
         if (Time.time > 2)
         {
             transform.Translate(_speed * Time.deltaTime, 0f, 0f);
+            // 3 * ~1, 0, 0
+            // 3(-0.1) * ~1, 0, 0
+            // 3(+0.1) * ~1, 0, 0
         }
     }
     }
