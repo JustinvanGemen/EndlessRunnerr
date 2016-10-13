@@ -28,7 +28,6 @@ public class UIUpdater : MonoBehaviour {
 
     private void ScoreUpdate()
     {
-        Debug.Log(multiplier);
         scorePoints = scorePoints + ((transform.position.x - lastPos) * multiplier);
         lastPos = transform.position.x;
     }
