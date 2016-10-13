@@ -19,10 +19,18 @@ public class BorderControl : MonoBehaviour {
 	    if (_otherPlayer.transform.position.x < transform.position.x)
         {
             
-            while (other.CompareTag("CamFast"))
+            if (other.CompareTag("CamFast"))
             {
-                _camMove.speed = _camMove.speed * 1.01f;
+                _camMove.speed = _camMove.speed + 0.1f;
+                //Invoke("CamMov", 1);
             }
+           
         }
 	}
+
+    void CamMov()
+    {
+        _camMove.speed = _camMove.speed * 1;
+    }
+
 }
