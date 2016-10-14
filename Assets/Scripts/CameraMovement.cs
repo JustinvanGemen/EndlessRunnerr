@@ -28,9 +28,6 @@ public class CameraMovement : MonoBehaviour {
         if (Time.time > 2)
         {
             transform.Translate(_speed * Time.deltaTime, 0f, 0f);
-            // 3 * ~1, 0, 0
-            // 3(-0.1) * ~1, 0, 0
-            // 3(+0.1) * ~1, 0, 0
         }
     }
     }

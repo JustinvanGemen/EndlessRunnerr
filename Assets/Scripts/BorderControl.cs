@@ -36,20 +36,17 @@ public class BorderControl : MonoBehaviour {
                 _fast = true;
                 _camMove.speed = 5f;
                 StartCoroutine(Timer());
-                Debug.Log("Fast");
             }
             if(other.CompareTag("CamSlow"))
                 {
                 _slow = true;
                 _camMove.speed = 1.5f;
                 StartCoroutine(Timer());
-                Debug.Log("Slow");
             }
         }
 
         if (other.CompareTag("CamKill"))
         {
-            Debug.Log("Life lost wall");
             _hSys.lifes -= 1f;
             _teleport = _otherPlayer.transform.position.x - transform.position.x;
             _thisPlayer3.x += 9;
@@ -69,13 +66,11 @@ public class BorderControl : MonoBehaviour {
         {
             _camMove.speed = 3;
             _fast = false;
-            Debug.Log("FastEnd");
         }
         if (_slow)
         {
             _camMove.speed = 3;
             _slow = false;
-            Debug.Log("SlowEnd");
         }
     }
 
