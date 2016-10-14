@@ -37,12 +37,12 @@ public class HealthSystem : MonoBehaviour {
             Destroy(gameObject); //Destroy the player with no lifes.
             Time.timeScale = 0; //pause the game.
         }
-        if(other.name == "ExtraLife")
+        if(other.name == "ExtraLife(Clone)")
         {
             lifes += 1;
             Destroy(other.gameObject);
         }
-        if(other.name == "GodMode")
+        if(other.name == "GodMode(Clone)")
         {
             godMode = true;
             Destroy(other.gameObject);

@@ -47,23 +47,23 @@ public class UIUpdater : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.name == "ScoreBoost")
+        if(other.name == "ScoreBoost(Clone)")
         {
             scorePoints = scorePoints + 20;
             Destroy(other.gameObject);
         }
-        else if(other.name == "ScoreMultiplier")
+        else if(other.name == "ScoreMultiplier(Clone)")
         {
             multiplier = 2;
             Invoke("ReturnMultiplier", 3);
             Destroy(other.gameObject);
         }
-        else if(other.name == "PointsDebuff")
+        else if(other.name == "PointsDebuff(Clone)")
         {
             scorePoints = scorePoints - 10;
             Destroy(other.gameObject);
         }
-        else if(other.name == "ScorePause")
+        else if(other.name == "ScorePause(Clone)")
         {
             multiplier = 0;
             Invoke("ReturnMultiplier", 2);
