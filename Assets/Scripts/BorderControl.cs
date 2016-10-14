@@ -52,8 +52,8 @@ public class BorderControl : MonoBehaviour {
             Debug.Log("Life lost wall");
             _hSys.lifes -= 1f;
             _teleport = _otherPlayer.transform.position.x - transform.position.x;
-            _thisPlayer3.x = _thisPlayer3.x + _teleport;
-            _thisPlayer3.y += 5;
+            _thisPlayer3.x += 9;
+            _thisPlayer3.y = 4;
             transform.position = _thisPlayer3;
 
         }
