@@ -1,27 +1,32 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DataBase : MonoBehaviour
 {
     private UIUpdater uiUpdater;
     private float score;
     // Use this for initialization
-    public void SendScore()
+
+
+    public void SendScore(InputField winnerName)
     {
-        uiUpdater = GetComponent<UIUpdater>();
-        score = uiUpdater.ScorePoints;
-        score = Mathf.Round(score);
-        //ERG BELANGRIJK
-        StartCoroutine(HandleEnterScore(score, 1));
+        Debug.Log(winnerName.text);
+        if(gameObject != null)
+        {
+            uiUpdater = GetComponent<UIUpdater>();
+            score = uiUpdater.ScorePoints;
+            score = Mathf.Round(score);
+            StartCoroutine(HandleEnterScore(score, winnerName.text));
+        }
+        
     }
 
-    public IEnumerator HandleEnterScore(float score, int playerID)
+    public IEnumerator HandleEnterScore(float score, string playerID)
     {
-        Debug.Log("Start Couroutine");
-
         //Create the url of the script with the variables that will be written to the database.
         //Om dit te debuggen kan je deze url invullen in je browser
-        string score_url = "http://jvdwijk.com/PHP/database.php" + "?score=" + score;
+        string score_url = "http://jvdwijk.com/PHP/database.php" + "?id=" + playerID + "&score=" + score;
 
         //Go to the url and get whatever the url is printing out
         WWW webRequest = new WWW(score_url);
@@ -40,6 +45,5 @@ public class DataBase : MonoBehaviour
         {
             Debug.Log("PHP Fail ");
         }
-
     }
 }

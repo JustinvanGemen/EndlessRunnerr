@@ -10,11 +10,9 @@ public class HealthSystem : MonoBehaviour {
     private Text text;
     private MenuScript menuScript;  //import menuscript as var.
     private bool godMode = false;
-    private DataBase dataBase;
 
     void Start()
     {
-        dataBase = GetComponent<DataBase>();
         gameOverCanvas.enabled = false;
         menuScript = GetComponent<MenuScript>();  //instantiate menuscript.
     }
@@ -36,7 +34,6 @@ public class HealthSystem : MonoBehaviour {
             {
                 text.text = "Player 1 Won!";
             }
-            dataBase.SendScore(); 
             Destroy(gameObject); //Destroy the player with no lifes.
             Time.timeScale = 0; //pause the game.
         }
