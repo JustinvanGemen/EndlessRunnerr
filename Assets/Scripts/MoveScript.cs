@@ -20,7 +20,7 @@ public class MoveScript : MonoBehaviour
     void FixedUpdate()
     {
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1, 1 << LayerMask.NameToLayer("Platform"));
-        if (gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("Player2"))
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -42,7 +42,7 @@ public class MoveScript : MonoBehaviour
                 
             }
         }
-        else if (gameObject.CompareTag("Player2"))
+        else if (gameObject.CompareTag("Player"))
         {
             if (Input.GetKey(KeyCode.D))
             {
