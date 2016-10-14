@@ -45,6 +45,7 @@ public class HealthSystem : MonoBehaviour {
         if(other.name == "GodMode")
         {
             godMode = true;
+            Destroy(other.gameObject);
             Invoke("GodModeOff", 3);
         }
     }
