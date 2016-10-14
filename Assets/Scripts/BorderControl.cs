@@ -12,7 +12,6 @@ public class BorderControl : MonoBehaviour {
     private float _camSpeed;
     private bool _fast;
     private bool _slow;
-    private float _teleport;
     private Vector3 _thisPlayer3;
 
 
@@ -43,16 +42,6 @@ public class BorderControl : MonoBehaviour {
                 _camMove.speed = 1.5f;
                 StartCoroutine(Timer());
             }
-        }
-
-        if (other.CompareTag("CamKill"))
-        {
-            _hSys.lifes -= 1f;
-            _teleport = _otherPlayer.transform.position.x - transform.position.x;
-            _thisPlayer3.x += 9;
-            _thisPlayer3.y = 4;
-            transform.position = _thisPlayer3;
-
         }
 
     }
